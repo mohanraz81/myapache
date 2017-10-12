@@ -6,7 +6,7 @@
       aws_access_key: AKIAJLVQWZMK4ZVNSNLQ
       aws_secret_key: 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
       region: us-east-1
-      family: mytestapp
+      family: mytestauto
       revision: REVISION_NO
       containers:
       - name: web
@@ -35,7 +35,7 @@
         state: present
         name: test-service
         cluster: weclusters
-        task_definition: mytestapp:REVISION_NO
+        task_definition: mytestauto:REVISION_NO
         desired_count: 3
         load_balancers: wordpress
         deployment_configuration:

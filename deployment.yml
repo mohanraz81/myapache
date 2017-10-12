@@ -3,6 +3,9 @@
   tasks:
   - name: Create task definition
     ecs_taskdefinition:
+      aws_access_key: AKIAJLVQWZMK4ZVNSNLQ
+      aws_secret_key: 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
+      region: us-east-1
       family: mytestapp
       revision: REVISION_NO
       containers:
@@ -26,6 +29,9 @@
     register: task_output
   - name: Create ECS Service
     ecs_service:
+        aws_access_key: AKIAJLVQWZMK4ZVNSNLQ
+        aws_secret_key: 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
+        region: us-east-1
         state: present
         name: test-service
         cluster: weclusters

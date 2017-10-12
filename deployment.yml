@@ -7,7 +7,6 @@
       aws_secret_key: 84HZdR1yGRAINmWvpEmrEPbAUjygcWlFiWG29V0s
       region: us-east-1
       family: mytestauto
-      revision: REVISION_NO
       containers:
       - name: web
         memory: 300
@@ -35,7 +34,7 @@
         state: present
         name: test-service
         cluster: weclusters
-        task_definition: mytestauto:REVISION_NO
+        task_definition: mytestauto
         desired_count: 3
         load_balancers: wordpress
         deployment_configuration:

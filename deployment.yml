@@ -3,10 +3,11 @@
   tasks:
   - name: Create task definition
     ecs_taskdefinition:
-      aws_access_key: AKIAI3HY2GIZWNGDZO5A
-      aws_secret_key: 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
+      aws_access_key: AKIAJKSOPRT6C6LS2IIA
+      aws_secret_key: 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
       region: us-east-1
       family: mytestauto
+      revision: REVISION_NO
       containers:
       - name: web
         memory: 300
@@ -28,13 +29,13 @@
     register: task_output
   - name: Create ECS Service
     ecs_service:
-        aws_access_key: AKIAI3HY2GIZWNGDZO5A
-        aws_secret_key: 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
+        aws_access_key: AKIAJKSOPRT6C6LS2IIA
+        aws_secret_key: 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
         region: us-east-1
         state: present
         name: test-service
         cluster: weclusters
-        task_definition: mytestauto
+        task_definition: mytestauto:REVISION_NO
         desired_count: 3
         load_balancers: wordpress
         deployment_configuration:
